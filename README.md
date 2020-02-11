@@ -1,1 +1,2 @@
 # churn
+## Project Objectives
