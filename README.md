@@ -1,7 +1,7 @@
 # Telecom Customer Churn Prediction
 ## Project Core Objectives
-1. Trained mutiple machine learning models in Python Notebook to predict customer churn for the TelCom Company.
-2. Programmed a Auto-Machine Learning model using H20 and compared the model performance (in terms of recall and accuracy) againts models trained in Python.
+1. Trained mutiple Python-based Machine Learning models to predict customer churn for the TelCo Company.
+2. Programmed a H20.ai-based Auto Machine Learning model and compared the AutoML model performance (in terms of recall and accuracy) againts manually trained models.
 3. Tested casual inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage realized in Python.             
 4. Assembled a model interpretability and explainability analysis using SHAP package on XGBoost Classification Model.
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
@@ -18,7 +18,8 @@ What are the possible outcomes
 Null hypothesis
 Outcomes and types of errors
 
-## Data Source Report - someone?
+## Data Description Report - someone?
+refer here: https://www.kaggle.com/blastchar/telco-customer-churn
 
 ## Churn Prediction Modeling
 ### Python-based Model -dev
@@ -34,11 +35,12 @@ Model Work Flow:
 5. Extra
     1) building a pipeline
     ...... 
-### H20 Auto-ML Model -everlyn
+### H20 Auto-ML Model -everlyn?
 
 ## Model Results 
-### Results Summary Report-- everlyn?
+### Results Summary Report -- everlyn?
 
+### Casual Inference Report --Charlie?
 ### Churn Model Interpretability and Explainability Report -- Jiajun
 To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
 
