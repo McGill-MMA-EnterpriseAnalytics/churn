@@ -1,5 +1,6 @@
 # Telecom Customer Churn Prediction
 ## Project Objectives
+"Change to past tense when it is done"
 1. Developing a customer churn prediction python notebook.
 2. Running a Auto-Machine Learning model using H20 and comparing the results from the python notebook.
 3. Testing casual inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage.             
