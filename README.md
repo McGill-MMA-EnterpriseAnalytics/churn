@@ -54,7 +54,11 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
+## Threats to validity - someone?
+### Uncertainties and Risks
+### Data quality issues
+
 ## Conclusions
-### Overall Conclusion
+### Overall Conclusion --Jiajun
 ### XGBoost Classification Model Bias Report -- Jiajun
-### Next Step 
+### Next Step -- jiajun
