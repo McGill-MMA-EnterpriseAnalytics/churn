@@ -26,5 +26,9 @@ To access Model interpretability and explainability, we used SHAR package
 
 We first try to visualize the first prediction's explanation
 
+<img src = "Model-Interpretability-Graph/Interpretability1.png" width = 700>
+<img src = "Model-Interpretability-Graph/Interpretability2.png" height = 400>
+<img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
+
 ## ML Bias Report
 
