@@ -19,13 +19,6 @@ Predicting (i.e., classifying) wheather a current customer will churn from TelCo
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
 6. Lessons learned and next steps
 
-### Null Hypothesis and Types of Errors:
-H<sub>0</sub>(Null Hypothesis): The recalll score is less or equal to 0.5 and no predicting power can be generated from the model. 
-
-H<sub>a</sub>(Alternative Hypothesis): The recalll score is greater than 0.5 and some predicting power can be generated from the model.
-
-Types of Erros: Both Type I and Type II errors are expected to be made by the model. The goal of the model is to minimize Type II errors (i.e., reducing false negative rate.)
-
 ## Data Description Report - someone?
 Document and present leveraged data sources used to create the dataset
 • Cover a brief resume of 5.2. Data Acquisition, 5.3. Data Exploration, and 5.4.
