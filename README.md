@@ -61,9 +61,11 @@ Data Preparation
 • Identify extra data that would be useful (go back to “Get the Data”).
 • Document what you have learned.
 5.4. Data Preparation
-1. Dealing with missing data 2. Cleaning data
+1. Dealing with missing data 
+2. Cleaning data
 3. Data preprocessing
-4. Feature subset selection 5. Feature engineering
+4. Feature subset selection 
+5. Feature engineering
 6. Feature scaling 7. Clustering
 refer here: https://www.kaggle.com/blastchar/telco-customer-churn
 
