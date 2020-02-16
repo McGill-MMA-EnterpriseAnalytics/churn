@@ -82,10 +82,10 @@ Model Work Flow:
 5. Extra
     1) building a pipeline
     ...... 
-### H20 Auto-ML Model -everlyn?
+### H20 Auto-ML Model -everlyn
 
 ## Model Results 
-### Results Summary Report -- everlyn?
+### Results Summary Report -- everlyn
 
 ### Casual Inference Report --Charlie?
 
