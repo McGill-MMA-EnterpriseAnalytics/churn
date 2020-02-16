@@ -22,13 +22,19 @@ Model Work Flow:
     ...... 
 
 ## Churn Model Interpretability and Explainability
-To access Model interpretability and explainability, we used SHAR package 
+To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
 
-We first try to visualize the first prediction's explanation
+We first can to visualize the first prediction's explanation:
 
 <img src = "Model-Interpretability-Graph/Interpretability1.png" width = 700>
+
+Next, we summarize the effects of all the features:
+
 <img src = "Model-Interpretability-Graph/Interpretability2.png" height = 400>
+
+We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
+
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
-## ML Bias Report
+## XGBoost Classification Model Bias Report
 
