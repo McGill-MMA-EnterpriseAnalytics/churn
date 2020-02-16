@@ -66,7 +66,8 @@ Data Preparation
 3. Data preprocessing
 4. Feature subset selection 
 5. Feature engineering
-6. Feature scaling 7. Clustering
+6. Feature scaling 
+7. Clustering
 refer here: https://www.kaggle.com/blastchar/telco-customer-churn
 
 ## Churn Prediction Modeling
