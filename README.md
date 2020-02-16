@@ -21,6 +21,10 @@ Model Work Flow:
     1) building a pipeline
     ...... 
 
-## Model Interpretability and Explainability
+## Churn Model Interpretability and Explainability
+To access Model interpretability and explainability, we used SHAR package 
+
+We first try to visualize the first prediction's explanation
 
 ## ML Bias Report
+
