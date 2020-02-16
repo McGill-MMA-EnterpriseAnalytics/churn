@@ -6,7 +6,7 @@
 4. Building a model interpretability and explainability analysis using SHAP pakacage.
 5. Generating a ML bias report based on the SHAR analysis to suggest further managerial actions.
 
-##Churn Prediction Modeling
+## Churn Prediction Modeling
 Model Work Flow:
 1. get data and descriptive stats
 2. data visualization 
