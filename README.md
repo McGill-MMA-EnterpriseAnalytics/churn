@@ -10,7 +10,14 @@ Our model will be used by the marketing and consumer retention team so that they
 ## Project Core Objectives/Hypothesis
 ### Prediction Task:
 Predicting (i.e., classifying) wheather a current customer will churn from TelCo or not.
-    
+
+### Null Hypothesis and Types of Errors:
+H<sub>0</sub>(Null Hypothesis): The recalll score is less or equal to 0.5 and no predicting power can be generated from the model. 
+
+H<sub>a</sub>(Alternative Hypothesis): The recalll score is greater than 0.5 and some predicting power can be generated from the model.
+
+Types of Erros: Both Type I and Type II errors are expected to be made by the model. The goal of the model is to minimize Type II errors (i.e., reducing false negative rate.)    
+
 ### Core Tasks/Actions:
 1. Trained mutiple Python-based Machine Learning models to predict customer churn for the TelCo Company.
 2. Programmed a H20.ai-based Auto Machine Learning model and compared the AutoML model performance (in terms of recall and accuracy) againts manually trained models.
@@ -106,12 +113,6 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 ## Conclusions -- Jiajun
 ### Overall Overview
--### Null Hypothesis and Types of Errors:
-H<sub>0</sub>(Null Hypothesis): The recalll score is less or equal to 0.5 and no predicting power can be generated from the model. 
-
-H<sub>a</sub>(Alternative Hypothesis): The recalll score is greater than 0.5 and some predicting power can be generated from the model.
-
-Types of Erros: Both Type I and Type II errors are expected to be made by the model. The goal of the model is to minimize Type II errors (i.e., reducing false negative rate.)
 
 ### Model Bias Report 
 ### Next Step
