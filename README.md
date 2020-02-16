@@ -7,7 +7,21 @@
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
 6. Lessons learned and next steps
 
+## Busniess Context - Jiajun
+### Problem Definition
+### Current Situation
+### Objectives and Benefits
+### Hypothesis
+What can be predicted / optimized
+What are the actions can be taken?
+What are the possible outcomes
+Null hypothesis
+Outcomes and types of errors
+
+## Data Source Report - someone?
+
 ## Churn Prediction Modeling
+### Python-based Model -dev
 Model Work Flow:
 1. get data and descriptive stats
 2. data visualization 
@@ -20,8 +34,12 @@ Model Work Flow:
 5. Extra
     1) building a pipeline
     ...... 
+### H20 Auto-ML Model -everlyn
 
-## Churn Model Interpretability and Explainability
+## Model Results 
+### Results Summary Report-- everlyn?
+
+### Churn Model Interpretability and Explainability Report -- Jiajun
 To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
 
 We first can to visualize the first prediction's explanation:
@@ -36,4 +54,7 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
-## XGBoost Classification Model Bias Report
+## Conclusions
+### Overall Conclusion
+### XGBoost Classification Model Bias Report -- Jiajun
+### Next Step 
