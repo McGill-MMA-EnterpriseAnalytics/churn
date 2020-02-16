@@ -1,7 +1,7 @@
 # Telecom Customer Churn Prediction
 ## Project Core Objectives
 1. Trained mutiple machine learning models in Python Notebook to predict customer churn for the TelCom Company.
-2. Programmed a Auto-Machine Learning model using H20 and comparing the results from the python notebook.
+2. Programmed a Auto-Machine Learning model using H20 and compared the model performance (in terms of recall and accuracy) againts models trained in Python.
 3. Tested casual inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage realized in Python.             
 4. Assembled a model interpretability and explainability analysis using SHAP package on XGBoost Classification Model.
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
