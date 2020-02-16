@@ -115,4 +115,5 @@ We can also just take the mean absolute value of the SHAP values for each featur
 ### Overall Overview
 
 ### Model Bias Report 
+There are four predictors used in the model that may be considered as potential bias or discremtory, namly, gener, senior citizen (i.e., whether the customer is a senior citizen or not), partner (i.e., whether the customer has a partner or not), and dependents (whether the customer has dependents or not). Given the previous 
 ### Next Step
