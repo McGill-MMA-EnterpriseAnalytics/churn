@@ -23,6 +23,44 @@ H<sub>a</sub>(Alternative Hypothesis): The recalll score is greater than 0.5 and
 Types of Erros: Both Type I and Type II errors are expected to be made by the model. The goal of the model is to minimize Type II errors (i.e., reducing false negative rate.)
 
 ## Data Description Report - someone?
+Document and present leveraged data sources used to create the dataset
+• Cover a brief resume of 5.2. Data Acquisition, 5.3. Data Exploration, and 5.4.
+Data Preparation
+• Profile and present the data before and after going through acquisition, exploration, and preparation.
+5.2. Data Acquisition
+• List the data you need and how much you need.
+• Find and document where you can get that data.
+• Check how much space it will take.
+• Check legal obligations, and get authorization if necessary.
+• Get access authorizations.
+• Create a workspace (with enough storage space).
+• Get the data.
+• Convert the data to a format you can easily manipulate (without changing the data itself).
+• Ensure sensitive information is deleted or protected (e.g. anonymized).
+• Check the size and type of the data (time series, sample, geographical, etc.)
+• Sample a test set, put it aside, and never look at it (no data snooping!).
+5.3. Data Exploration
+• Create a copy of the data for exploration (sampling it down to a manageable size if necessary).
+• Create a Jupyter notebook to keep a record of your data exploration.
+• Study each attribute and its characteristics:
+• Name
+• Type (categorical, int/float, bounded/unbounded, text, structured, etc.)
+• % of missing values
+• Noisiness and type of noise (stochastic, outliers, rounding errors, etc.)
+• Possibly useful for the task?
+• Type of distribution (Gaussian, uniform, logarithmic, etc.)
+• For supervised learning tasks, identify the target attribute(s).
+• Visualize the data.
+• Study the correlations between attributes.
+• Study how you would solve the problem manually.
+• Identify the promising transformations you may want to apply.
+• Identify extra data that would be useful (go back to “Get the Data”).
+• Document what you have learned.
+5.4. Data Preparation
+1. Dealing with missing data 2. Cleaning data
+3. Data preprocessing
+4. Feature subset selection 5. Feature engineering
+6. Feature scaling 7. Clustering
 refer here: https://www.kaggle.com/blastchar/telco-customer-churn
 
 ## Churn Prediction Modeling
