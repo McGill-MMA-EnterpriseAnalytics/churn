@@ -1,11 +1,11 @@
 # Telecom Customer Churn Prediction
-## Project Objectives
-"Change to past tense when it is done"
-1. Developing a customer churn prediction python notebook.
-2. Running a Auto-Machine Learning model using H20 and comparing the results from the python notebook.
-3. Testing casual inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage.             
-4. Built a model interpretability and explainability analysis using SHAP package on XGBoost Classification Model.
-5. Generating a ML bias report based on the SHAR analysis to suggest further managerial actions.
+## Project Core Objectives
+1. Trained mutiple machine learning models in Python Notebook to predict customer churn for the TelCom Company.
+2. Programmed a Auto-Machine Learning model using H20 and comparing the results from the python notebook.
+3. Tested casual inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage realized in Python.             
+4. Assembled a model interpretability and explainability analysis using SHAP package on XGBoost Classification Model.
+5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
+6. Lessons learned and next steps
 
 ## Churn Prediction Modeling
 Model Work Flow:
@@ -37,4 +37,3 @@ We can also just take the mean absolute value of the SHAP values for each featur
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
 ## XGBoost Classification Model Bias Report
-
