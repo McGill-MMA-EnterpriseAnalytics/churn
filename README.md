@@ -97,11 +97,11 @@ To access the XGBoost Classification Model interpretability and explainability, 
 
 We first can to visualize the first prediction's explanation:
 
-<img src = "Model-Interpretability-Graph/Interpretability-Graph1.png.png" width = 700>
+<img src = "Model-Interpretability-Graph/Interpretability-Graph1.png" width = 700>
 
 Next, we summarize the effects of all the features:
 
-<img src = "Model-Interpretability-Graph/Interpretability-Graph2.png.png" height = 400>
+<img src = "Model-Interpretability-Graph/Interpretability-Graph2.png" height = 400>
 
 We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
 
