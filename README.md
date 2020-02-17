@@ -21,7 +21,7 @@ Types of Erros: Both Type I and Type II errors are expected to be made by the mo
 ### Core Tasks/Actions:
 1. Trained multiple Python-based Machine Learning models to predict customer churn for the TelCo Company.
 2. Programmed a H20.ai-based Auto Machine Learning model and compared the AutoML model performance (in terms of recall and accuracy) against manually trained models.
-3. Tested causal inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy pakacage realized in Python.             
+3. Tested causal inference on following predictors: gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy package realized in Python.             
 4. Assembled a model interpretability and explainability analysis using SHAP package on XGBoost Classification Model.
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
 6. Lessons learned and next steps
