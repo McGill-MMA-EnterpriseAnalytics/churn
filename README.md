@@ -127,12 +127,6 @@ Due to the limited available algorithms at this stage of H2O, we were only able 
 ![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
 
 ​																Figure 1. Model Result Comparison
-
-### Results Comparison of Python-Based Models and H2O AutoML
-
-![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
-
-​																Figure 1. Model Result Comparison
 ### Casual Inference Report --Charlie?
 
 ### Churn Model Interpretability and Explainability Report
