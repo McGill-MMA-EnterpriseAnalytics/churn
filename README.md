@@ -78,10 +78,46 @@ Model Work Flow:
 5. Extra
     1) building a pipeline
     ...... 
-### H20 Auto-ML Model -Evelyn
+### H20 Auto-ML Model 
+
+H2O’s AutoML can be used for automating the machine learning workflow, which includes automatic training and tuning of many models within a user-specified time-limit. It has made it easy for non-experts to experiment with machine learning to set a benchmark. 
+
+We have used H2O package to build models to compare the results with our Python-based model. 
+
+Due to the limited available algorithms at this stage of H2O, we were only able to perform Random Forest and Gradient Boosting to compare with our Python-based model. However, we also explored deep learning , and asked H2O to self-select 10 best performing models. 
+
+​																Table xx. H2O AutoML Model Results
+
+| Model             | Accuracy Score | F1 Score |
+| ----------------- | -------------- | -------- |
+| Random Forest     | 0.8272         | 0.6308   |
+| Gradient Boosting | 0.8346         | 0.6272   |
+| Neutral Network   | 0.8257         | 0.6193   |
+
+​									Table xx. 10 Best Performing Models Selected by H2O AutoML
+
+| model_id                                            | auc      | mse      |
+| --------------------------------------------------- | -------- | -------- |
+| StackedEnsemble_BestOfFamily_AutoML_20200216_115946 | 0.850544 | 0.133636 |
+| StackedEnsemble_AllModels_AutoML_20200216_115946    | 0.850509 | 0.133678 |
+| GBM_5_AutoML_20200216_115946                        | 0.848467 | 0.13321  |
+| GLM_1_AutoML_20200216_115946                        | 0.847801 | 0.133984 |
+| GBM_grid__1_AutoML_20200216_115946_model_1          | 0.842607 | 0.148619 |
+| GBM_1_AutoML_20200216_115946                        | 0.841779 | 0.136873 |
+| GBM_2_AutoML_20200216_115946                        | 0.841048 | 0.136614 |
+| GBM_3_AutoML_20200216_115946                        | 0.838457 | 0.138417 |
+| DeepLearning_1_AutoML_20200216_115946               | 0.83469  | 0.13864  |
+| GBM_4_AutoML_20200216_115946                        | 0.832629 | 0.140648 |
+| XRT_1_AutoML_20200216_115946                        | 0.832395 | 0.140071 |
+| DRF_1_AutoML_20200216_115946                        | 0.828687 | 0.141467 |
 
 ## Model Results 
-### Results Summary Report -- Evelyn
+
+### Results Comparison of Python-Based Models and H2O AutoML
+
+![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
+
+​																Figure 1. Model Result Comparison
 
 ### Casual Inference Report --Charlie?
 
