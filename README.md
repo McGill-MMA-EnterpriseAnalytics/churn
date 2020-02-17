@@ -110,13 +110,14 @@ Here are some sample interpretations:
 5. If a consumer is a senior citizen, it is more lily to churn.
 
 We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
+
 <img src = "Model-Interpretability-Graph/Interpretability-Graph3.png" height = 400>
 
 ## Threats to validity - someone?
 ### Uncertainties and Risks
 ### Data quality issues
 
-## Conclusions -- Jiajun
+## Conclusions 
 ### Overall Thought
 
 ### Model Bias Report 
