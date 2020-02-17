@@ -27,6 +27,7 @@ Types of Erros: Both Type I and Type II errors are expected to be made by the mo
 6. Lessons learned and next steps
 
 ## Data Description Report - someone?
+Be sure including the following: 
 Document and present leveraged data sources used to create the dataset
 • Cover a brief resume of 5.2. Data Acquisition, 5.3. Data Exploration, and 5.4.
 Data Preparation
@@ -93,18 +94,22 @@ Model Work Flow:
 ### Casual Inference Report --Charlie?
 
 ### Churn Model Interpretability and Explainability Report
-To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
+To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
 
 We first can to visualize the first prediction's explanation:
-
 <img src = "Model-Interpretability-Graph/Interpretability-Graph1.png" width = 700>
 
-Next, we summarize the effects of all the features:
-
+Next, we summarize the effects of all the features. The plot below sorts features by the sum of SHAP value, and uses SHAP values to show the distribution of the impacts each feature has on the model output. A higher feature value is colored in red and a lower feature value is colored in blue. 
 <img src = "Model-Interpretability-Graph/Interpretability-Graph2.png" height = 400>
 
-We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
+Here are some sample interpretations: 
+1. If a consumer is on a month to month contract (red-colored), it is more likely to churn.
+2. The longer a consumer is with the company (higher red-colored for tenure), it is less likely to churn.
+3. If a consumer's monthly charges are high, it is more likely to churn.
+4. On the other hand, if the total charges are high, it is less likely to churn. This could imply that for high spenders at TelCo, these consumers are less price sensitive. 
+5. If a consumer is a senior citizen, it is more lily to churn.
 
+We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
 <img src = "Model-Interpretability-Graph/Interpretability-Graph3.png" height = 400>
 
 ## Threats to validity - someone?
@@ -112,9 +117,10 @@ We can also just take the mean absolute value of the SHAP values for each featur
 ### Data quality issues
 
 ## Conclusions -- Jiajun
-### Overall Overview
+### Overall Thought
 
 ### Model Bias Report 
 There are four predictors used in the model that may be considered as potential biased or discriminatory, namely, gender, senior citizen (i.e., whether the customer is a senior citizen or not), partner (i.e., whether the customer has a partner or not), and dependents (whether the customer has dependents or not). Based on the Gini coefficients report and summarization effects of all the features, only senior citizens and gender show a high degree of effects on model prediction outcome. This implies that we can still keep partners and dependents in our model without worrying about model bias. Regarding gender, the predictor's effect has a low feature value and low mean absolute SHAP values. Hence, by dropping the gender from the model, not only can we prevent any potential model bias, but also the adverse effects on the model performance by dropping the predictor is lowest. If we drop the predictor, we may lose significant predicting power. Additionally, age or date of birth predictors is widely used in machine learning models such as credit card approval and insurance underwriting. Hence, we would recommend keeping the senior citizen predictor.
 
 ### Next Step
+Our team would recommend the marketing analysis at the TelCo continue to investigate the model interpretability report, to identify churn correlations or causes, and to address the issues accordingly. For example, our team has found that if a consumer is with a two-year phone contract, then that consumer is less likely to churn. Hence, the TelCo marketing team could offer better new two-year deals to attract new customers to sign-up for a new two-year contract. However, some factors that contribute to the prediction outcome are not immediately apparent. For example, our team has discovered that if a consumer signed up for paperless billing, it is more likely to churn. The TelCo team cannot derive action such as stop all paperless billing based on the report alone. Instead the TelCo team should deep dive into the causal inference report and discover the unobserved factors, for example, what types of people are more likely to sign-up for paperless billing.  
