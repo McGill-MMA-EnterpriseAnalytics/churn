@@ -86,7 +86,8 @@ Model Work Flow:
 5. Extra
     1) building a pipeline
     ...... 
-### H20 Auto-ML Model -Evelyn
+### H20 Auto-ML Model 
+
 H2O’s AutoML can be used for automating the machine learning workflow, which includes automatic training and tuning of many models within a user-specified time-limit. It has made it easy for non-experts to experiment with machine learning to set a benchmark. 
 
 We have used H2O package to build models to compare the results with our Python-based model. 
@@ -119,6 +120,13 @@ Due to the limited available algorithms at this stage of H2O, we were only able 
 | DRF_1_AutoML_20200216_115946                        | 0.828687 | 0.141467 |
 
 ## Model Results 
+
+
+### Results Comparison of Python-Based Models and H2O AutoML
+
+![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
+
+​																Figure 1. Model Result Comparison
 
 ### Results Comparison of Python-Based Models and H2O AutoML
 
