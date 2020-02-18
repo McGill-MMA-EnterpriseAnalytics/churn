@@ -133,10 +133,10 @@ Due to the limited available algorithms at this stage of H2O, we were only able 
 To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
 
 We first can to visualize the first prediction's explanation:
-<img src = "Model-Interpretability-Graph/Interpretability-Graph1.png" width = 700>
+<img src = "Model-Interpretability-Graph/Interpretability1.png" width = 700>
 
 Next, we summarize the effects of all the features. The plot below sorts features by the sum of SHAP value, and uses SHAP values to show the distribution of the impacts each feature has on the model output. A higher feature value is colored in red and a lower feature value is colored in blue. 
-<img src = "Model-Interpretability-Graph/Interpretability-Graph2.png" height = 400>
+<img src = "Model-Interpretability-Graph/Interpretability2.png" height = 400>
 
 Here are some sample interpretations: 
 1. If a consumer is on a month to month contract (red-colored), it is more likely to churn.
@@ -147,7 +147,7 @@ Here are some sample interpretations:
 
 We can also just take the mean absolute value of the SHAP values for each feature to get a standard bar plot (produces stacked bars for multi-class outputs):
 
-<img src = "Model-Interpretability-Graph/Interpretability-Graph3.png" height = 400>
+<img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
 ## Threats to validity - someone?
 ### Uncertainties and Risks
