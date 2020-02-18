@@ -149,7 +149,7 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
-## Threats to validity - someone?
+## Threats to validity - Jiajun
 ### Uncertainties and Risks
 ### Data quality issues
 
