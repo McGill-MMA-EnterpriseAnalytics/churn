@@ -26,66 +26,62 @@ Types of Erros: Both Type I and Type II errors are expected to be made by the mo
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
 6. Lessons learned and next steps
 
-## Data Description Report - someone?
-Be sure including the following: 
-Document and present leveraged data sources used to create the dataset
-• Cover a brief resume of 5.2. Data Acquisition, 5.3. Data Exploration, and 5.4.
-Data Preparation
-• Profile and present the data before and after going through acquisition, exploration, and preparation.
+## Data Description Report - 
+
 5.2. Data Acquisition
-• List the data you need and how much you need.
-• Find and document where you can get that data.
-• Check how much space it will take.
-• Check legal obligations, and get authorization if necessary.
-• Get access authorizations.
-• Create a workspace (with enough storage space).
-• Get the data.
-• Convert the data to a format you can easily manipulate (without changing the data itself).
-• Ensure sensitive information is deleted or protected (e.g. anonymized).
-• Check the size and type of the data (time series, sample, geographical, etc.)
-• Sample a test set, put it aside, and never look at it (no data snooping!).
-5.3. Data Exploration
-• Create a copy of the data for exploration (sampling it down to a manageable size if necessary).
-• Create a Jupyter notebook to keep a record of your data exploration.
-• Study each attribute and its characteristics:
-• Name
-• Type (categorical, int/float, bounded/unbounded, text, structured, etc.)
-• % of missing values
-• Noisiness and type of noise (stochastic, outliers, rounding errors, etc.)
-• Possibly useful for the task?
-• Type of distribution (Gaussian, uniform, logarithmic, etc.)
-• For supervised learning tasks, identify the target attribute(s).
-• Visualize the data.
-• Study the correlations between attributes.
-• Study how you would solve the problem manually.
-• Identify the promising transformations you may want to apply.
-• Identify extra data that would be useful (go back to “Get the Data”).
-• Document what you have learned.
+We used the data from Kaggle’s Telco Customer Churn prediction challenge. 
+The data has 7043 profiles of customers along with labels representing whether they churned or not.
+The original dataset was 955 kb in size.
+We created a forlder for the dataset after every stage of processing
+We downloaded the data 
+Data was stored in an csv file.
+To ensure sensitive information is deleted or protected we removed the customer ID column during pre-processing data(e.g. anonymized).
+We looked at the types of data and dealt with all the categorical variables
+We ensured there was no data snooping.
+
+5.3.1 Data Cleaning
+We looked at the number of missing values and surprisingly, found none.
+We started of looking at the data types and counting features of each type, 
+turns out that 18/21 columns were categorical, 2 were integers and 1 was float. 
+Next, we looked at the number of different values there can exist in each of the categorical feature columns.
+We noticed an issue here because TotalCharges column representing 
+the total amount charged to the customer was a string and not a float like it should be, 
+so we converted it to a float and realised that there were now some missing values for float which we replaced by 0 
+assuming the person was not charged anything so far.
+We dummified the categorical variables and moved on to exploration.
+
+
+5.3.2 Data Exploration
+Created a Jupyter notebook to keep a record of our data exploration.
+We looked at summary statistics of the numerical columns to find the mean and standard deviation of 
+customers who churned and did not churn. 
+There was not much difference between the mean values of both classes’ mean value for Monthly Charges. 
+The variance in Monthly Charges for those who churned was about 33.33% the value of the mean while for those 
+who did not it was about 50% of the mean value indicating the loyal customers showed higher diversity in the 
+amount they paid monthly.
+We then looked at the top features showing the highest the lowest correlation with the outcome variables.
+Monthly charges were positively  correlated while Total Charges and Tenure were negatively correlated with 
+Tenure most negatively correlated with the customer churning as expected. This indicated that 
+the longer the person stays the less likely he is to ever churn.
+We visualised the correlation matrix.
+We followed this by experimenting with various models to predict the churn now.
+
+
 5.4. Data Preparation
-1. Dealing with missing data 
-2. Cleaning data
-3. Data preprocessing
+1. Dealt with missing data in TotalCharges column
+3. Encoding of categorical variables
 4. Feature subset selection 
-5. Feature engineering
-6. Feature scaling 
-7. Clustering
-refer here: https://www.kaggle.com/blastchar/telco-customer-churn
+6. Feature scaling
+7. After the preparation, there weere no missing values and all categorical variables were dummified and all numerical cariables normalised.
+   using an sklearn-pipeline.
+
 
 ## Churn Prediction Modeling
-### Python-based Model -dev
+### Python-based Model 
+We experimented with various diifferent classifier algorithms including random forests, decision trees, logistic regression, K Nearest Neighbors and even XG Boost.
+The performance from Random Forests and XG Boost was most promising so we used grid search CV to fine tune these 2 models.
+We got the best performance from the random forest with accuracy of 84.9% and an f1 score of 0.56
 
-Model Work Flow:
-1. get data and descriptive stats
-2. data visualization 
-3. train a model:
-    1) Regression;
-    2) ANN;
-    3) Random Forest;
-    ...
-4. select model and further tune
-5. Extra
-    1) building a pipeline
-    ...... 
 ### H20 Auto-ML Model 
 
 H2O’s AutoML can be used for automating the machine learning workflow, which includes automatic training and tuning of many models within a user-specified time-limit. It has made it easy for non-experts to experiment with machine learning to set a benchmark. 
