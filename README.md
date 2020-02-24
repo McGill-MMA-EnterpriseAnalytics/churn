@@ -28,7 +28,7 @@ Types of Erros: Both Type I and Type II errors are expected to be made by the mo
 
 ## Data Description Report - 
 
-5.2. Data Acquisition
+### Data Acquisition
 We used the data from Kaggle’s Telco Customer Churn prediction challenge. 
 The data has 7043 profiles of customers along with labels representing whether they churned or not.
 The original dataset was 955 kb in size.
@@ -39,7 +39,7 @@ To ensure sensitive information is deleted or protected we removed the customer 
 We looked at the types of data and dealt with all the categorical variables
 We ensured there was no data snooping.
 
-5.3.1 Data Cleaning
+### Data Cleaning
 We looked at the number of missing values and surprisingly, found none.
 We started of looking at the data types and counting features of each type, 
 turns out that 18/21 columns were categorical, 2 were integers and 1 was float. 
@@ -51,7 +51,7 @@ assuming the person was not charged anything so far.
 We dummified the categorical variables and moved on to exploration.
 
 
-5.3.2 Data Exploration
+### Data Exploration
 Created a Jupyter notebook to keep a record of our data exploration.
 We looked at summary statistics of the numerical columns to find the mean and standard deviation of 
 customers who churned and did not churn. 
@@ -67,14 +67,13 @@ We visualised the correlation matrix.
 We followed this by experimenting with various models to predict the churn now.
 
 
-5.4. Data Preparation
+### Data Preparation
 1. Dealt with missing data in TotalCharges column
 3. Encoding of categorical variables
 4. Feature subset selection 
 6. Feature scaling
 7. After the preparation, there weere no missing values and all categorical variables were dummified and all numerical cariables normalised.
    using an sklearn-pipeline.
-
 
 ## Churn Prediction Modeling
 ### Python-based Model 
@@ -145,13 +144,10 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
-## Threats to validity - Jiajun
-### Uncertainties and Risks
-### Data quality issues
+## Threats to Validity
+There are four primary considerations for data quality and threats to validity. First, the data consist of only 7000 observations. The results we have are acceptable but are not outstanding. To achieve more desirable results, we recommend the TelCo to add more observations to train the model. Secondly, the data provided is a snapshot of the past data at a certain point in time. However, as the market and competitors change, the customer churn will change as well. Hence we recommended the data analyst team the TelCo continuously train the model. Thirdly, the model does not consider external factors, such as macro-economic factors. Lastly, regarding the depth of the data, the data does not contain customer satisfaction levels or user engagement factors. We recommend the TelCo to explore more variables to include in the dataset. 
 
 ## Conclusions 
-### Overall Thought
-
 ### Model Bias Report 
 There are four predictors used in the model that may be considered as potential biased or discriminatory, namely, gender, senior citizen (i.e., whether the customer is a senior citizen or not), partner (i.e., whether the customer has a partner or not), and dependents (whether the customer has dependents or not). Based on the Gini coefficients report and summarization effects of all the features, only senior citizens and gender show a high degree of effects on model prediction outcome. This implies that we can still keep partners and dependents in our model without worrying about model bias. Regarding gender, the predictor's effect has a low feature value and low mean absolute SHAP values. Hence, by dropping the gender from the model, not only can we prevent any potential model bias, but also the adverse effects on the model performance by dropping the predictor is lowest. If we drop the predictor, we may lose significant predicting power. Additionally, age or date of birth predictors is widely used in machine learning models such as credit card approval and insurance underwriting. Hence, we would recommend keeping the senior citizen predictor.
 
