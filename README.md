@@ -122,7 +122,22 @@ Due to the limited available algorithms at this stage of H2O, we were only able 
 ![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
 
 ​																Figure 1. Model Result Comparison
-### Casual Inference Report --Charlie?
+### Casual Inference Report 
+
+We tested causal inference on following predictors: Gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy package realized in Python. Results are shown in the following table. 
+
+| Variables                         |  P-Value | Causal Estimate |
+| ----------------------------------| -------- | --------------- |
+| Contract Month-to-month           | <0.001   | 0.05997         |
+| Paperless Billing                 | <0.001   | 0.04491         |
+| Gender                            | 0.358    | -0.00329        |
+| Senior Citizen                    | 0.044    | 0.04420         |
+| Partner                           | 0.464    | -0.00122        |
+| Dependents                        | 0.065    | -0.02092        |
+| Phone Service                     | 0.424    | 0.00988         |
+
+We found that only Contract Month-to-month and Paperless Billing have causal relationship with the target. However, we cannot draw conclusion lightly based solely on the result. Interpretability and explainablity report is needed to further investigate the relationship. 
+
 
 ### Churn Model Interpretability and Explainability Report
 To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
