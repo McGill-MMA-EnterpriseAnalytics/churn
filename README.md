@@ -26,66 +26,61 @@ Types of Erros: Both Type I and Type II errors are expected to be made by the mo
 5. Composed a Machine Learning Bias Report based on the SHAR analysis to suggest further managerial actions.
 6. Lessons learned and next steps
 
-## Data Description Report - someone?
-Be sure including the following: 
-Document and present leveraged data sources used to create the dataset
-• Cover a brief resume of 5.2. Data Acquisition, 5.3. Data Exploration, and 5.4.
-Data Preparation
-• Profile and present the data before and after going through acquisition, exploration, and preparation.
-5.2. Data Acquisition
-• List the data you need and how much you need.
-• Find and document where you can get that data.
-• Check how much space it will take.
-• Check legal obligations, and get authorization if necessary.
-• Get access authorizations.
-• Create a workspace (with enough storage space).
-• Get the data.
-• Convert the data to a format you can easily manipulate (without changing the data itself).
-• Ensure sensitive information is deleted or protected (e.g. anonymized).
-• Check the size and type of the data (time series, sample, geographical, etc.)
-• Sample a test set, put it aside, and never look at it (no data snooping!).
-5.3. Data Exploration
-• Create a copy of the data for exploration (sampling it down to a manageable size if necessary).
-• Create a Jupyter notebook to keep a record of your data exploration.
-• Study each attribute and its characteristics:
-• Name
-• Type (categorical, int/float, bounded/unbounded, text, structured, etc.)
-• % of missing values
-• Noisiness and type of noise (stochastic, outliers, rounding errors, etc.)
-• Possibly useful for the task?
-• Type of distribution (Gaussian, uniform, logarithmic, etc.)
-• For supervised learning tasks, identify the target attribute(s).
-• Visualize the data.
-• Study the correlations between attributes.
-• Study how you would solve the problem manually.
-• Identify the promising transformations you may want to apply.
-• Identify extra data that would be useful (go back to “Get the Data”).
-• Document what you have learned.
-5.4. Data Preparation
-1. Dealing with missing data 
-2. Cleaning data
-3. Data preprocessing
+## Data Description Report - 
+
+### Data Acquisition
+We used the data from Kaggle’s Telco Customer Churn prediction challenge. 
+The data has 7043 profiles of customers along with labels representing whether they churned or not.
+The original dataset was 955 kb in size.
+We created a forlder for the dataset after every stage of processing
+We downloaded the data 
+Data was stored in an csv file.
+To ensure sensitive information is deleted or protected we removed the customer ID column during pre-processing data(e.g. anonymized).
+We looked at the types of data and dealt with all the categorical variables
+We ensured there was no data snooping.
+
+### Data Cleaning
+We looked at the number of missing values and surprisingly, found none.
+We started of looking at the data types and counting features of each type, 
+turns out that 18/21 columns were categorical, 2 were integers and 1 was float. 
+Next, we looked at the number of different values there can exist in each of the categorical feature columns.
+We noticed an issue here because TotalCharges column representing 
+the total amount charged to the customer was a string and not a float like it should be, 
+so we converted it to a float and realised that there were now some missing values for float which we replaced by 0 
+assuming the person was not charged anything so far.
+We dummified the categorical variables and moved on to exploration.
+
+
+### Data Exploration
+Created a Jupyter notebook to keep a record of our data exploration.
+We looked at summary statistics of the numerical columns to find the mean and standard deviation of 
+customers who churned and did not churn. 
+There was not much difference between the mean values of both classes’ mean value for Monthly Charges. 
+The variance in Monthly Charges for those who churned was about 33.33% the value of the mean while for those 
+who did not it was about 50% of the mean value indicating the loyal customers showed higher diversity in the 
+amount they paid monthly.
+We then looked at the top features showing the highest the lowest correlation with the outcome variables.
+Monthly charges were positively  correlated while Total Charges and Tenure were negatively correlated with 
+Tenure most negatively correlated with the customer churning as expected. This indicated that 
+the longer the person stays the less likely he is to ever churn.
+We visualised the correlation matrix.
+We followed this by experimenting with various models to predict the churn now.
+
+
+### Data Preparation
+1. Dealt with missing data in TotalCharges column
+3. Encoding of categorical variables
 4. Feature subset selection 
-5. Feature engineering
-6. Feature scaling 
-7. Clustering
-refer here: https://www.kaggle.com/blastchar/telco-customer-churn
+6. Feature scaling
+7. After the preparation, there weere no missing values and all categorical variables were dummified and all numerical cariables normalised.
+   using an sklearn-pipeline.
 
 ## Churn Prediction Modeling
-### Python-based Model -dev
+### Python-based Model 
+We experimented with various diifferent classifier algorithms including random forests, decision trees, logistic regression, K Nearest Neighbors and even XG Boost.
+The performance from Random Forests and XG Boost was most promising so we used grid search CV to fine tune these 2 models.
+We got the best performance from the random forest with accuracy of 84.9% and an f1 score of 0.56
 
-Model Work Flow:
-1. get data and descriptive stats
-2. data visualization 
-3. train a model:
-    1) Regression;
-    2) ANN;
-    3) Random Forest;
-    ...
-4. select model and further tune
-5. Extra
-    1) building a pipeline
-    ...... 
 ### H20 Auto-ML Model 
 
 H2O’s AutoML can be used for automating the machine learning workflow, which includes automatic training and tuning of many models within a user-specified time-limit. It has made it easy for non-experts to experiment with machine learning to set a benchmark. 
@@ -127,7 +122,22 @@ Due to the limited available algorithms at this stage of H2O, we were only able 
 ![image-20200217093720639](C:\Users\Evelyn\AppData\Roaming\Typora\typora-user-images\image-20200217093720639.png)
 
 ​																Figure 1. Model Result Comparison
-### Casual Inference Report --Charlie?
+### Casual Inference Report 
+
+We tested causal inference on following predictors: Gender, SeniorCitizen, Partner, Dependents, PhoneService, and PaperlessBilling by applying Microsoft DoWhy package realized in Python. Results are shown in the following table. 
+
+| Variables                         |  P-Value | Causal Estimate |
+| ----------------------------------| -------- | --------------- |
+| Contract Month-to-month           | <0.001   | 0.05997         |
+| Paperless Billing                 | <0.001   | 0.04491         |
+| Gender                            | 0.358    | -0.00329        |
+| Senior Citizen                    | 0.044    | 0.04420         |
+| Partner                           | 0.464    | -0.00122        |
+| Dependents                        | 0.065    | -0.02092        |
+| Phone Service                     | 0.424    | 0.00988         |
+
+We found that only Contract Month-to-month and Paperless Billing have causal relationship with the target. However, we cannot draw conclusion lightly based solely on the result. Interpretability and explainablity report is needed to further investigate the relationship. 
+
 
 ### Churn Model Interpretability and Explainability Report
 To access the XGBoost Classification Model interpretability and explainability, we used the SHAR package to visualize the predictors' effect on the target variable, churn. SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model. The reason we choose the XGBoost Classification Model to analyze instead of the Random Forest Model because the Random Forest Model takes significantly longer compared to the XGBoost Model, and our team's laptops are unable to provide the results. 
@@ -149,13 +159,10 @@ We can also just take the mean absolute value of the SHAP values for each featur
 
 <img src = "Model-Interpretability-Graph/Interpretability3.png" height = 400>
 
-## Threats to validity - Jiajun
-### Uncertainties and Risks
-### Data quality issues
+## Threats to Validity
+There are four primary considerations for data quality and threats to validity. First, the data consist of only 7000 observations. The results we have are acceptable but are not outstanding. To achieve more desirable results, we recommend the TelCo to add more observations to train the model. Secondly, the data provided is a snapshot of the past data at a certain point in time. However, as the market and competitors change, the customer churn will change as well. Hence we recommended the data analyst team the TelCo continuously train the model. Thirdly, the model does not consider external factors, such as macro-economic factors. Lastly, regarding the depth of the data, the data does not contain customer satisfaction levels or user engagement factors. We recommend the TelCo to explore more variables to include in the dataset. 
 
 ## Conclusions 
-### Overall Thought
-
 ### Model Bias Report 
 There are four predictors used in the model that may be considered as potential biased or discriminatory, namely, gender, senior citizen (i.e., whether the customer is a senior citizen or not), partner (i.e., whether the customer has a partner or not), and dependents (whether the customer has dependents or not). Based on the Gini coefficients report and summarization effects of all the features, only senior citizens and gender show a high degree of effects on model prediction outcome. This implies that we can still keep partners and dependents in our model without worrying about model bias. Regarding gender, the predictor's effect has a low feature value and low mean absolute SHAP values. Hence, by dropping the gender from the model, not only can we prevent any potential model bias, but also the adverse effects on the model performance by dropping the predictor is lowest. If we drop the predictor, we may lose significant predicting power. Additionally, age or date of birth predictors is widely used in machine learning models such as credit card approval and insurance underwriting. Hence, we would recommend keeping the senior citizen predictor.
 
